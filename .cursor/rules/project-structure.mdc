@@ -1,0 +1,18 @@
+---
+alwaysApply: true
+description: Project structure and test discovery for this repository
+---
+
+## Repository Structure
+
+- Tests live under `src/` and use the `*.test.ts` suffix.
+- Test discovery is configured in [vitest.config.ts](mdc:vitest.config.ts) to include `src/**/*.test.ts`.
+- Project metadata and scripts are defined in [package.json](mdc:package.json).
+- TypeScript configuration is in [tsconfig.json](mdc:tsconfig.json).
+
+## Conventions
+
+- Keep unit tests colocated in `src/` mirroring the feature/topic under test.
+- Prefer small, focused test files per topic (e.g., `2-coerce.test.ts`, `3-literal.test.ts`, `4-string.test.ts`).
+- Use clear, descriptive test names that mirror the API being verified.
+

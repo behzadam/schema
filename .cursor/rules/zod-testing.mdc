@@ -1,0 +1,18 @@
+---
+globs: src/**/*.test.ts
+description: Zod testing conventions and patterns used in this repository
+---
+
+## Zod Testing Conventions
+
+- Use `schema.parse(value)` for success assertions and `expect(() => schema.parse(value)).toThrow()` for failures.
+- When testing transforms, assert the transformed output with `toBe` or `toEqual`.
+- Name tests to reflect the exact API call, e.g., `it('z.string().max(5)')`.
+- Prefer one expectation path per test case to keep failures precise.
+
+## String Schema Examples
+
+- Constraints: `.max(n)`, `.min(n)`, `.length(n)`, `.regex(r)`, `.startsWith(s)`, `.endsWith(s)`, `.includes(s)`.
+- Refiners: `.uppercase()`, `.lowercase()` validate the case.
+- Transforms: `.trim()`, `.toLowerCase()`, `.toUpperCase()`, `.normalize()` change the value; assert the result.
+

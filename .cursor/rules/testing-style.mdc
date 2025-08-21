@@ -1,0 +1,18 @@
+---
+globs: src/**/*.test.ts
+description: Vitest testing style conventions for unit tests in this repo
+---
+
+## Vitest Style
+
+- Import from `vitest`: `import { describe, expect, it } from "vitest"`.
+- Name tests to mirror the API, e.g., `it('z.string().max(5)', ...)` or `it('z.enum([...]) rejects values not in the enum', ...)`.
+- Use `parse` for success cases and `() => schema.parse(value)` with `.toThrow()` for failures.
+- Prefer `toBe` for primitive equality and `toEqual` for objects.
+- Keep one assertion path per test; split into separate tests when semantics differ.
+
+## Structure
+
+- Group related cases in a `describe` block per topic.
+- Keep tests short and focused; avoid unnecessary comments.
+
